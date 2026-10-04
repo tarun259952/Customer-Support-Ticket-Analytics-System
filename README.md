@@ -44,59 +44,59 @@ Tickets were classified into 10 categories (Login Issue, Bug Report, Refund Requ
 - **Resolution sentiment** is mildly positive and nearly identical across all categories (0.399–0.406), indicating support-closing language is consistent regardless of issue type.
 - **Classification performance is weak.** The confusion matrix shows heavy misclassification across most categories, and two categories (*Data Sync Issue*, *Payment Problem*) are **never predicted at all** — every ticket that should map to them is routed elsewhere. This points to overlapping/insufficiently distinct text features between categories rather than a data volume problem, and is flagged as a priority fix (see Conclusion).
 
-![Confusion Matrix — Ticket Classification](images/confusion_matrix.png)
+![Confusion Matrix — Ticket Classification](Images/confusion_matrix.png)
 
 ### 3. Response Time Analytics
 This notebook tested for relationships between first response time, resolution time, SLA breach, and 10+ operational and customer attributes.
 
 - **Correlations are effectively zero.** No feature (customer tenure, issue complexity, prior tickets, satisfaction, etc.) shows more than a ±0.01 Pearson correlation with resolution time.
 
-![Correlation with Resolution Time / Full Correlation Heatmap](images/3_correlation_heatmap.png)
+![Correlation with Resolution Time / Full Correlation Heatmap](Images/3_correlation_heatmap.png)
 
 - **No day-of-week effect.** Ticket volume (~28,500/day) and average first response time (~36.3h) are flat across all seven days.
 
-![Ticket Volume & Avg First Response by Day of Week](images/3_day_of_week.png)
+![Ticket Volume & Avg First Response by Day of Week](Images/3_day_of_week.png)
 
 - **No monthly seasonality.** Volume holds steady at 5,000–5,800 tickets/month for the full three-year window with no trend or cyclicality.
 
-![Monthly Trend — Volume, Response Time, SLA Breach & Escalation](images/3_monthly_trends.png)
+![Monthly Trend — Volume, Response Time, SLA Breach & Escalation](Images/3_monthly_trends.png)
 
 - **First response time and resolution time are uncorrelated** — the scatter plot shows uniform noise with no diagonal pattern.
 
-![First Response vs Resolution Time Scatter](images/3_scatter_response_vs_resolution.png)
+![First Response vs Resolution Time Scatter](Images/3_scatter_response_vs_resolution.png)
 
 - **SLA breach rate is ~50% everywhere** — by priority, channel, category, region, subscription tier, and complexity, breach rate never moves outside a 49.5–50.8% band.
 
-![SLA Breach Rate — Multi-Dimensional Breakdown](images/3_sla_breach_breakdown.png)
+![SLA Breach Rate — Multi-Dimensional Breakdown](Images/3_sla_breach_breakdown.png)
 
 - **Escalation rate mirrors the same pattern** — hovering at ~50% regardless of category, with resolution time for escalated vs. non-escalated tickets nearly identical across priority levels.
 
-![Escalation Rate by Category / Resolution Time Escalated vs Not](images/3_escalation_analysis.png)
+![Escalation Rate by Category / Resolution Time Escalated vs Not](Images/3_escalation_analysis.png)
 
 - **Response speed doesn't meaningfully change outcomes.** Even "Immediate (<1h)" responses show a 48.2% breach rate, barely below "Delayed (>24h)" tickets at 49.9% — and satisfaction stays pinned at ~3.00/5 in every bucket.
 
-![Response Speed Bucket Performance](images/3_speed_buckets.png)
+![Response Speed Bucket Performance](Images/3_speed_buckets.png)
 
 - **Response and resolution time distributions are uniform**, not the right-skewed pattern typical of real-world ticket data — mean and median are identical in both cases (36.3h / 120.5h), which is a strong signal of the underlying data being uniformly random rather than reflecting real operational drivers.
 
-![First Response & Total Resolution Time Distributions](images/3_speed_buckets.png)
+![First Response & Total Resolution Time Distributions](Images/3_speed_buckets.png)
 
 ### 4. Support Dashboard (4 pages)
 - **Page 1 – Overview:** 200,000 tickets, 50.0% SLA breach rate, 50.2% escalation rate, 36.3h avg first response, 120.5h (5.0 days) avg resolution, 3.00/5 satisfaction. Status, priority, and risk categories are near-evenly distributed.
 
-![Dashboard Page 1 — Executive Overview](images/dashboard_page1_overview.png)
+![Dashboard Page 1 — Executive Overview](Images/dashboard_page1_overview.png)
 
 - **Page 2 – SLA & Response Time:** Confirms breach rate and response time are flat across every segmentation cut — no single lever (channel, region, subscription) stands out as a fix point.
 
-![Dashboard Page 2 — SLA & Response Time Analysis](images/dashboard_page2_sla.png)
+![Dashboard Page 2 — SLA & Response Time Analysis](Images/dashboard_page2_sla.png)
 
 - **Page 3 – Escalation & Risk:** Escalation rate (~50%) and satisfaction score (~3.0) are statistically indistinguishable across Low/Medium/High/Critical risk labels — risk labels are not currently predictive of outcomes.
 
-![Dashboard Page 3 — Escalation & Risk Analysis](images/dashboard_page3_escalation.png)
+![Dashboard Page 3 — Escalation & Risk Analysis](Images/dashboard_page3_escalation.png)
 
 - **Page 4 – Category & Channel:** All 5 channels (Chat, Email, Phone, Social Media, Web Form) perform near-identically on every metric (~40K tickets, ~36.3h response, ~120.5h resolution, ~50% breach, ~3.00 satisfaction).
 
-![Dashboard Page 4 — Category & Channel Performance](images/dashboard_page4_performance.png)
+![Dashboard Page 4 — Category & Channel Performance](Images/dashboard_page4_performance.png)
 
 ---
 
@@ -113,6 +113,7 @@ The core analytical finding, however, is that **the dataset shows no meaningful 
 
 **Suggested next steps:** re-run the same pipeline against a real or more realistically-simulated ticket dataset (with actual noise/skew and embedded relationships) to validate that the analytics and dashboard correctly surface true drivers of SLA breach and escalation.
 
+**NOTE** --> The datasets were too lare to push through so they have been placed on gitignore
 
 
 ## 🤝 Let's Connect!
