@@ -2,8 +2,6 @@
 
 An end-to-end analytics pipeline built on a 200,000-row customer support ticket dataset (2022–2024), covering data cleaning, NLP-based ticket classification, response/resolution time analytics, and a 4-page executive dashboard.
 
-> **Note on images:** all chart/dashboard screenshots below reference the `images/` folder already in this repo, using the same filenames as uploaded.
-
 ---
 
 ## Objective
@@ -113,13 +111,21 @@ The core analytical finding, however, is that **the dataset shows no meaningful 
 
 **Suggested next steps:** re-run the same pipeline against a real or more realistically-simulated ticket dataset (with actual noise/skew and embedded relationships) to validate that the analytics and dashboard correctly surface true drivers of SLA breach and escalation.
 
-**NOTE** --> The datasets were too lare to push through so they have been placed on gitignore
+## Limitations & Next Steps
 
+- The dataset appears to be synthetic: every operational attribute converges to nearly the same value, so the analysis finds no real drivers of SLA breach or escalation.
+- The ticket classifier never predicts two of its ten categories (Data Sync Issue and Payment Problem). The next step is richer TF-IDF n-grams or embeddings and a class-balance check.
+- Re-running the same pipeline on real or more realistically simulated ticket data would show whether the dashboard surfaces true drivers.
+- The raw datasets are excluded via `.gitignore` because of their size.
 
-## 🤝 Let's Connect!
+## Skills Demonstrated
 
-Whether you want to discuss the SQL scripts in this repo, talk about remote work trends, or just say hi—my inbox is open!
+Data cleaning · NLP ticket classification (TF-IDF) · SLA and response-time analytics · Statistical checks for relationships and signal · Multi-page dashboarding · pandas · scikit-learn · Plotly
 
-* 💼 **LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/tarun-panigrahi-523534325)
-* 🐙 **GitHub:** [Follow my latest projects](https://github.com/tarun259952)
-* 📧 **Gmail:** [Send me an email](mailto:tarunpanigrahi259@gmail.com)
+## Contact
+
+Questions about the pipeline or the findings? Feel free to reach out.
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/tarun-panigrahi-523534325)
+- 🐙 [GitHub](https://github.com/tarun259952)
+- 📧 [Email](mailto:tarunpanigrahi259@gmail.com)
